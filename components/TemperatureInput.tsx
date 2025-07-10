@@ -1,17 +1,26 @@
 import { View, Text, TextInput } from "react-native";
-import { useState } from "react";
+import { styles } from "./TemperatureInput.styles";
+import { DEFAULT_TEMPERATURE } from "../constants";
 
-export default function TemperatureInput() {
-  const [number, onChangeNumber] = useState("");
+export default function TemperatureInput({
+  defaultValue,
+  inputUnit,
+  onChangeInput,
+}: {
+  defaultValue: string;
+  inputUnit: string;
+  onChangeInput: (value: number) => void;
+}) {
   return (
-    <View>
-      <Text>Temperature Input</Text>
+    <View style={styles.inputContainer}>
       <TextInput
-        onChangeText={onChangeNumber}
-        value={number}
-        placeholder="useless placeholder"
         keyboardType="numeric"
+        maxLength={4}
+        style={styles.inputText}
+        defaultValue={defaultValue}
+        onChangeText={(text) => onChangeInput(Number(text))}
       />
+      <Text style={styles.inputText}>{inputUnit}</Text>
     </View>
   );
 }
