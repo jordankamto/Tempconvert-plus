@@ -25,6 +25,7 @@ export default function Index() {
   };
   const [targetUnit, setTargetUnit] = useState<Unit>(UNITS.fahrenheit);
   const [buttonUnit, setButtonUnit] = useState(UNITS.kelvin);
+  const [currentBg, setCurrentBg] = useState({});
 
   const handlePress = () => {
     const newUnit = changeUnit(targetUnit);
@@ -36,18 +37,32 @@ export default function Index() {
     TemperatureInput: Temperature,
     targetUnit: Unit
   ): Temperature => {
-    switch (targetUnit) {
-      case UNITS.fahrenheit:
-        return convertToFahrenheit(TemperatureInput);
-      case UNITS.kelvin:
-        return convertToKelvin(TemperatureInput);
-      default:
-        return TemperatureInput;
+    if (!isNaN(TemperatureInput.value)) {
+      switch (targetUnit) {
+        case UNITS.fahrenheit:
+          return convertToFahrenheit(TemperatureInput);
+        case UNITS.kelvin:
+          return convertToKelvin(TemperatureInput);
+        default:
+          return TemperatureInput;
+      }
     }
+    return { value: 0, unit: targetUnit };
   };
 
+  useEffect(() => {
+    console.log("Input Value:", inputValue);
+    if (inputValue < 20) {
+      setCurrentBg(coldBg);
+    } else if (inputValue > 30) {
+      setCurrentBg(hotBg);
+    } else {
+      setCurrentBg(normalBg);
+    }
+  }, [inputValue]);
+
   return (
-    <ImageBackground source={normalBg} style={styles.container}>
+    <ImageBackground source={currentBg} style={styles.container}>
       <View style={styles.content}>
         <ResultDisplay
           temperature={getConvertedTemperature(inputTemperature, targetUnit)}
