@@ -1,50 +1,64 @@
-# Welcome to your Expo app 👋
+# 🌡️ TempConvert+ — Premium Celsius Converter
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**TempConvert+** is a minimalist and elegant temperature conversion app built with React Native and TypeScript. Designed with user experience in mind, it allows real-time conversion from Celsius to Fahrenheit or Kelvin with a visually reactive interface that adapts the background according to the temperature level (cold, normal, hot).
 
-## Get started
+> 🧪 First React Native project built for learning, focusing on clean architecture, component separation, and UX clarity.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## ✨ Features
 
-2. Start the app
+- 🔁 **Real-time temperature conversion** as you type
+- 🌡️ **Switch between Fahrenheit and Kelvin** with one tap
+- 🖼️ **Dynamic background** that changes based on the input temperature:
+  - ❄️ Cold background (below 20°C)
+  - 🌤️ Normal background (20°C–30°C)
+  - 🔥 Hot background (above 30°C)
+- 🧼 **Minimalist, clean, and responsive UI**
+- ⚠️ Input validation to ensure only numeric input is accepted
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 📱 Screenshots
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+| Cold                              | Normal                                | Hot                             |
+| --------------------------------- | ------------------------------------- | ------------------------------- |
+| ![cold](./assets/images/cold.png) | ![normal](./assets/images/normal.png) | ![hot](./assets/images/hot.png) |
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+> 🎥 You can also watch the [demo video](./assets/video/Screen_Recording_20250712_213923_Expo%20Go.mp4)
 
-## Get a fresh project
+---
 
-When you're ready, run:
+## ⚙️ Stack & Tools
 
-```bash
-npm run reset-project
-```
+- [React Native](https://reactnative.dev/)
+- [Expo](https://expo.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- Built-in **StyleSheet** API (with styles separated per component)
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## 📂 Project Structure
 
-To learn more about developing your project with Expo, look at the following resources:
+/
+├── app/
+│ └── index.tsx # Main screen
+├── components/
+│ ├── TemperatureInput.tsx
+│ ├── ResultDisplay.tsx
+│ ├── SwitchUnitButton.tsx
+│ └── \*.styles.ts # Styles for each component
+├── services/
+│ └── temperatureConversion.ts
+├── assets/
+│ ├── backgrounds/ # Cold / normal / hot background images
+│ └── demo/ # Video and screenshots
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 🧠 Motivation
 
-## Join the community
+This project was created as my first React Native app to learn:
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- Basics of Expo and mobile UI
+- Component-based architecture
+- TypeScript usage and input validation
+- Visual feedback and UX refinement
