@@ -39,7 +39,7 @@
 ---
 
 ## 📂 Project Structure
-
+```
 /
 ├── app/
 │ └── index.tsx # Main screen
@@ -53,7 +53,7 @@
 ├── assets/
 │ ├── backgrounds/ # Cold / normal / hot background images
 │ └── demo/ # Video and screenshots
-
+```
 ## 🧠 Motivation
 
 This project was created as my first React Native app to learn:
