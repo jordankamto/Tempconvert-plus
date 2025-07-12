@@ -1,20 +1,16 @@
 import { Text, TouchableOpacity } from "react-native";
 import { styles } from "./ResultDisplay.styles";
-import { Unit } from "@/constants";
+import { Temperature } from "../types";
 
 export default function ResultDisplay({
-  value,
-  unit,
+  temperature,
 }: {
-  value: number;
-  unit: Unit;
+  temperature: Temperature;
 }) {
   return (
     <Text style={styles.resultText}>
-      {value.toString()}{" "}
-      <TouchableOpacity>
-        <Text style={styles.resultText}>{unit}</Text>
-      </TouchableOpacity>
+      {temperature.value.toFixed(2).toString()}{" "}
+      <Text style={styles.resultText}>{temperature.unit}</Text>
     </Text>
   );
 }

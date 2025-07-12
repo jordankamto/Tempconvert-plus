@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   inputText: {
-    fontSize: 20,
+    fontSize: 25,
     color: "grey",
   },
 });
